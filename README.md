@@ -1,5 +1,8 @@
 # BirthdayDrop
 
+<img width="1511" height="827" alt="Screenshot 2026-03-10 at 2 59 39 PM" src="https://github.com/user-attachments/assets/e74b96be-61cb-4a45-bb63-41d230e008be" />
+
+
 ## Project Description
 
 BirthdayDrop is a fun and interactive web application designed to celebrate birthdays. It allows users to create a personalized birthday page with a countdown to their special day, a section for friends and family to leave wishes, a virtual cake with candles to blow out, and a surprise wheel for extra fun. The application is built using HTML, CSS, and JavaScript, focusing on a delightful user experience with engaging animations and a festive design.
