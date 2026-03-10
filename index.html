@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BirthdayDrop | منصة ذكرياتك الرقمية</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- شاشة البداية -->
+  <div id="introScreen" class="intro-screen">
+    <div class="intro-card">
+      <div class="intro-emoji">🎉</div>
+      <h2>BirthdayDrop</h2>
+      <p>جاهزين نبدأ حفلة الميلاد؟</p>
+      <button id="enterPartyBtn">ابدأ الاحتفال ✨</button>
+    </div>
+  </div>
+
+  <!-- خلفية متحركة -->
+  <div class="bg-effects">
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+
+    <div class="balloons">
+      <span>🎈</span>
+      <span>🎈</span>
+      <span>🎈</span>
+      <span>🎈</span>
+      <span>🎈</span>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <nav class="nav">
+      <div class="logo">🎈 BirthdayDrop</div>
+      <div class="tagline">ذكريات + تهاني + عدّاد + مفاجآت</div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>اصنع سحر ميلادك الرقمي</h1>
+      <p>شارك الرابط مع أصدقائك واجمع أجمل الأمنيات في مكان واحد.</p>
+
+      <div class="create-card">
+        <div class="grid">
+          <input type="text" id="userName" placeholder="شو اسمك يا قمر؟" autocomplete="name" />
+          <input type="date" id="birthDate" />
+        </div>
+
+        <small class="hint">اختاري/اختر تاريخ الميلاد ثم ابدأ السحر 🎂</small>
+
+        <div class="actions">
+          <button id="startBtn">انقر هنا لرؤية السحر 🚀</button>
+          <button class="secondary" id="copyLinkBtn" disabled>انسخ رابط المشاركة 🔗</button>
+        </div>
+
+        <div class="share">
+          <label for="shareLink">رابطك:</label>
+          <input type="text" id="shareLink" readonly placeholder="سيظهر هنا بعد إدخال البيانات..." />
+          <small class="hint">الرابط يفتح الصفحة ومعه الاسم + التاريخ.</small>
+        </div>
+      </div>
+
+      <!-- الرسالة الخاصة -->
+      <div id="specialMessage" class="card hidden">
+        <h2>💌 رسالة خاصة</h2>
+        <p id="messageText">كل سنة وأنت بخير، هذا اليوم إلك وحدك ✨</p>
+        <button id="openMessageBtn">افتح الرسالة 🎁</button>
+      </div>
+
+      <!-- الكعكة -->
+      <div id="cakeSection" class="card hidden">
+        <h2>🎂 كعكة الميلاد</h2>
+        <p class="subtitle">اضغطي/اضغط لإطفاء الشموع وابدأ الحفلة</p>
+
+        <div class="cake-wrap">
+          <div class="cake">
+            <div class="candles">
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+            </div>
+            <div class="cake-top"></div>
+            <div class="cake-body"></div>
+            <div class="cake-base"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="blowCandlesBtn">اطفئ الشموع 🕯️</button>
+        </div>
+      </div>
+
+      <!-- العداد -->
+      <div id="countdown-container" class="card hidden">
+        <h2 id="welcome"></h2>
+        <p class="subtitle">العد التنازلي لعيد ميلادك 🎂</p>
+
+        <div class="countdown">
+          <div class="pill"><span id="d">0</span><small>يوم</small></div>
+          <div class="pill"><span id="h">00</span><small>ساعة</small></div>
+          <div class="pill"><span id="m">00</span><small>دقيقة</small></div>
+          <div class="pill"><span id="s">00</span><small>ثانية</small></div>
+        </div>
+
+        <p id="status" class="status"></p>
+
+        <div class="actions">
+          <button id="giftBtn" class="secondary hidden">افتح الهدية 🎁</button>
+        </div>
+        <p id="giftMessage" class="status"></p>
+      </div>
+
+      <!-- عجلة المفاجآت -->
+      <div id="surpriseSection" class="card hidden">
+        <h2>🎡 عجلة المفاجآت</h2>
+        <p class="subtitle">لفّ/لفّي العجلة وخذ مفاجأة جميلة</p>
+
+        <div class="wheel-box">
+          <div id="wheel" class="wheel">🎉</div>
+        </div>
+
+        <div class="actions">
+          <button id="spinWheelBtn">لف العجلة ✨</button>
+        </div>
+
+        <p id="surpriseResult" class="status"></p>
+      </div>
+
+      <!-- الذكريات -->
+      <div id="memoriesSection" class="card hidden">
+        <h2>📸 أجمل الذكريات</h2>
+        <div class="memories-grid">
+          <div class="memory-card">
+            <div class="memory-icon">🎈</div>
+            <h3>ذكرى جميلة</h3>
+            <p>كل عيد ميلاد هو بداية لحكاية جديدة وفرصة لفرح جديد.</p>
+          </div>
+
+          <div class="memory-card">
+            <div class="memory-icon">💌</div>
+            <h3>رسالة دافئة</h3>
+            <p>تذكّر/ي دائمًا أن اليوم مميز لأن وجودك مميز.</p>
+          </div>
+
+          <div class="memory-card">
+            <div class="memory-icon">🌟</div>
+            <h3>أمنية خاصة</h3>
+            <p>أتمنى لك سنة مليئة بالنجاح والضحكات واللحظات الحلوة.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- التهاني -->
+      <div id="wishes-container" class="card hidden">
+        <h2>📬 دفتر التهاني</h2>
+        <p class="subtitle">اكتبي/اكتب تهنئة… وبتظهر تحت مباشرة</p>
+
+        <form id="wishForm" class="wish-form">
+          <input type="text" id="fromName" placeholder="اسمك (اختياري)" />
+          <textarea id="wishText" placeholder="اكتب تهنئتك هنا..." rows="3"></textarea>
+
+          <div class="actions">
+            <button type="submit">أضف التهنئة ✨</button>
+            <button type="button" class="secondary" id="clearWishesBtn">مسح كل التهاني 🧹</button>
+          </div>
+        </form>
+
+        <div id="wishesList" class="wishes-list"></div>
+
+        <small class="hint">
+          * حاليًا التهاني تنحفظ على نفس الجهاز (LocalStorage).
+        </small>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span dir="ltr">Made with by  Eng.Saja 
+        للتواصل 0597054487
+      </span>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
